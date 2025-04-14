@@ -1,0 +1,250 @@
+/* basic setup, nothing fancy */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    transition: background .5s, color .5s;
+}
+
+body.dark {
+    background: #1a1a1a;
+    color: white;
+}
+
+.hero {
+    background: linear-gradient(135deg, #2a4066, #4a69bd);
+    padding: 55px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-stuff {
+    display: inline-block;
+}
+
+.profile-pic {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    border: 3px solid white;
+}
+
+.hero h1 {
+    font-size: 2.4em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 22px;
+    right: 18px;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #333;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+body.dark #theme-toggle {
+    background: #333;
+    color: white;
+}
+
+nav {
+    background: rgba(0,0,0,0.8);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 18px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #4a69bd;
+}
+
+.container {
+    width: 88%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 22px;
+}
+
+section {
+    padding: 58px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.9em;
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Circle buttons fixed below projects */
+.side-buttons {
+    position: absolute;
+    left: 20px;
+    top: 100%;
+    z-index: 20;
+}
+
+.circle-btn {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #4a69bd;
+    color: white;
+    border: none;
+    margin: 15px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.circle-btn:hover {
+    background: #2a4066;
+}
+
+/* Roll-out content in-page */
+.rollout-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+}
+
+.rollout-content.active {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Skill bars */
+.skill-bar {
+    margin: 12px 0;
+    text-align: left;
+}
+
+.skill-bar p {
+    margin: 4px 0;
+}
+
+.progress {
+    height: 12px;
+    background: #4a69bd;
+    border-radius: 4px;
+    width: 0;
+    transition: width 1.8s ease;
+}
+
+.rollout-content.active .progress {
+    width: attr(data-width) + '%';
+}
+
+.win {
+    color: #4a69bd;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* Project cards */
+.project-card {
+    background: white;
+    padding: 23px;
+    margin: 18px auto;
+    max-width: 590px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+body.dark .project-card {
+    background: #2a2a2a;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    transition: transform .3s;
+}
+
+.project-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 9px 18px;
+    background: #4a69bd;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.btn:hover {
+    background: #2a4066;
+}
+
+.socials a {
+    color: #333;
+    font-size: 1.4em;
+    margin: 0 12px;
+}
+
+body.dark .socials a {
+    color: white;
+}
+
+.socials a:hover {
+    color: #4a69bd;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 18px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .hero h1 { font-size: 1.9em; }
+    nav ul li { margin: 0 9px; }
+    .project-card { max-width: 88%; }
+    #theme-toggle { top: 15px; right: 15px; }
+    .side-buttons { left: 10px; }
+}
